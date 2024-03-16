@@ -33,12 +33,10 @@ public class Employer {
     Integer phone;
     String address;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private Account account;
 
-    @OneToMany(mappedBy = "id")
-    private List<Account> accounts;
-
-    @Column(name = "account_id") // Thêm cột account_id để lưu trữ id của tài khoản trong bảng Admin
-    private Integer accountId;
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company comany;

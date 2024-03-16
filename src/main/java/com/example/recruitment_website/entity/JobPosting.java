@@ -43,7 +43,7 @@ public class JobPosting {
     String title;
     String job;
     String specialized;
-    String quantity;
+    Integer quantity;
     String typeOfWord;
     String sex;
     String experience;
@@ -56,6 +56,8 @@ public class JobPosting {
     String request;
     String benefits;
     Date deadline;
+    String status;
+    Date postingDate;
 
     @ManyToOne
     @JoinColumn(name = "company_id")

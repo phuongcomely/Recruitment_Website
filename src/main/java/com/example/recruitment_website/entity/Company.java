@@ -34,22 +34,24 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // id tự động tăng
      Integer id;
-    String logo;
     String companyName;
+    String slug; // nha-ba-nu
+    String logo;
     String companyEmail;
-    Integer companyPhone;
+    String companyPhone;
     String companyWebsite;
     String field;
-    String personnelSize;
+    String personnalSize;
     String address;
     Integer taxCode;
     Date taxDate;
     String placeOfTax;
     String video;
 
-    @OneToMany(mappedBy = "id")
-    private List<Employer> employers;
 
-    @Column(name = "employer_id") // Thêm cột account_id để lưu trữ id của tài khoản trong bảng Admin
-    private Integer employerId;
+
+//    @OneToMany(mappedBy = "id")
+//    private List<Employer> employers;
+//    @Column(name = "employer_id") // Thêm cột account_id để lưu trữ id của tài khoản trong bảng Admin
+//    private Integer employerId;
 }

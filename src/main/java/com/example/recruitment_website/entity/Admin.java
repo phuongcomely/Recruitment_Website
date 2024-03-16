@@ -25,11 +25,16 @@ public class Admin {
 
     String name;
 
-    @OneToMany(mappedBy = "id")
-    List<Account> accounts;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private Account account;
 
-    @Column(name = "account_id") // Thêm cột account_id để lưu trữ id của tài khoản trong bảng Admin
-    private Integer accountId;
+
+//    @OneToMany(mappedBy = "id")
+//    List<Account> accounts;
+//
+//    @Column(name = "account_id") // Thêm cột account_id để lưu trữ id của tài khoản trong bảng Admin
+//    private Integer accountId;
 
 
 }
